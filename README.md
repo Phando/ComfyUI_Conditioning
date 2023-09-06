@@ -22,7 +22,7 @@ Ever since seeing [Davemane42's Nodes](https://github.com/Davemane42/ComfyUI_Dav
 - phando_conditioning_lora
 
 ### Install
-Install the [ComfiUI-Workflow-Component](https://github.com/ltdrdata/ComfyUI-Workflow-Component) custom nodes.
-Drop the phando folder from the repo into your .../custom_nodes/ComfyUI-Workflow-Component/components folder.
-Restart ComfyUI
+- Install the [ComfiUI-Workflow-Component](https://github.com/ltdrdata/ComfyUI-Workflow-Component) custom nodes.
+- Drop the phando folder from the repo into your .../custom_nodes/ComfyUI-Workflow-Component/components folder.
+- Restart ComfyUI
 
