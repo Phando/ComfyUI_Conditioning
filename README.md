@@ -11,13 +11,18 @@ Ever since seeing [Davemane42's Nodes](https://github.com/Davemane42/ComfyUI_Dav
 ## Multi Conditioning with Multi LoRa
 ![Multi Conditioning with Multi LoRa](images/conditioning_lora_workflow.png)
 
+## Auto Zeroing Prompt
+![Auto Zeroing Prompt](images/autozeroprompt.png)
+
 ### Nodes:
-- phando_conditioning : A node that 
+- phando_autozeroprompt
+- phando_conditioning
 - phando_conditioning_adv
 - phando_conditioning_lora
 - phando_conditioning_lora_adv
 
 ### Workflows:
+- phando_autozeroprompt
 - phando_conditioning
 - phando_conditioning_lora
 
