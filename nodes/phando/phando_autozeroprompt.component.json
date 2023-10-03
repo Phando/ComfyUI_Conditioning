@@ -1,0 +1,495 @@
+{
+  "last_node_id": 9,
+  "last_link_id": 11,
+  "nodes": [
+    {
+      "id": 4,
+      "type": "Text Compare",
+      "pos": [
+        3501,
+        847
+      ],
+      "size": {
+        "0": 210,
+        "1": 162
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text_a",
+          "type": "STRING",
+          "link": 3
+        },
+        {
+          "name": "text_b",
+          "type": "STRING",
+          "link": 11
+        }
+      ],
+      "outputs": [
+        {
+          "name": "TEXT_A_PASS",
+          "type": "STRING",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "TEXT_B_PASS",
+          "type": "STRING",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "BOOL_NUMBER",
+          "type": "NUMBER",
+          "links": [
+            7
+          ],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "SCORE_NUMBER",
+          "type": "NUMBER",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "COMPARISON_TEXT",
+          "type": "STRING",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Text Compare"
+      },
+      "widgets_values": [
+        "similarity",
+        0
+      ]
+    },
+    {
+      "id": 5,
+      "type": "Text box",
+      "pos": [
+        3338,
+        872
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            3
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "title": "Empty Text",
+      "properties": {
+        "Node name for S&R": "Text box"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 1,
+      "type": "CLIPTextEncode",
+      "pos": [
+        3256,
+        764
+      ],
+      "size": {
+        "0": 210,
+        "1": 54
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 9
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 10,
+          "widget": {
+            "name": "text",
+            "config": [
+              "STRING",
+              {
+                "multiline": true
+              }
+            ]
+          },
+          "slot_index": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            2,
+            6
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "eye with an iris made from a beautiful meadow"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "Conditioning Input Switch",
+      "pos": [
+        3761,
+        743
+      ],
+      "size": {
+        "0": 228.39999389648438,
+        "1": 66
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "conditioning_a",
+          "type": "CONDITIONING",
+          "link": 5
+        },
+        {
+          "name": "conditioning_b",
+          "type": "CONDITIONING",
+          "link": 6
+        },
+        {
+          "name": "boolean_number",
+          "type": "NUMBER",
+          "link": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            8
+          ],
+          "shape": 3,
+          "slot_index": 0,
+          "color": "#FFA931"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Conditioning Input Switch"
+      }
+    },
+    {
+      "id": 2,
+      "type": "ConditioningZeroOut",
+      "pos": [
+        3513,
+        719
+      ],
+      "size": {
+        "0": 211.60000610351562,
+        "1": 26
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 2
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            5
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ConditioningZeroOut"
+      }
+    },
+    {
+      "id": 8,
+      "type": "ComponentInput",
+      "pos": [
+        2980,
+        760
+      ],
+      "size": {
+        "0": 178,
+        "1": 26
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "links": [
+            9
+          ],
+          "slot_index": 0,
+          "label": "clip"
+        }
+      ],
+      "properties": {},
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 9,
+      "type": "ComponentInput",
+      "pos": [
+        2980,
+        870
+      ],
+      "size": {
+        "0": 178,
+        "1": 26
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "links": [
+            10,
+            11
+          ],
+          "slot_index": 0,
+          "label": "prompt"
+        }
+      ],
+      "properties": {},
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 7,
+      "type": "ComponentOutput",
+      "pos": [
+        4050,
+        743
+      ],
+      "size": {
+        "0": 178,
+        "1": 26
+      },
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "link": 8,
+          "label": null
+        }
+      ],
+      "properties": {},
+      "color": "#323",
+      "bgcolor": "#535"
+    }
+  ],
+  "links": [
+    [
+      2,
+      1,
+      0,
+      2,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      3,
+      5,
+      0,
+      4,
+      0,
+      "STRING"
+    ],
+    [
+      5,
+      2,
+      0,
+      6,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      6,
+      1,
+      0,
+      6,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      7,
+      4,
+      2,
+      6,
+      2,
+      "NUMBER"
+    ],
+    [
+      8,
+      6,
+      0,
+      7,
+      0,
+      "*"
+    ],
+    [
+      9,
+      8,
+      0,
+      1,
+      0,
+      "CLIP"
+    ],
+    [
+      10,
+      9,
+      0,
+      1,
+      1,
+      "STRING"
+    ],
+    [
+      11,
+      9,
+      0,
+      4,
+      1,
+      "STRING"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {},
+  "version": 0.4,
+  "output": {
+    "1": {
+      "inputs": {
+        "text": [
+          "9",
+          0
+        ],
+        "clip": [
+          "8",
+          0
+        ]
+      },
+      "class_type": "CLIPTextEncode"
+    },
+    "2": {
+      "inputs": {
+        "conditioning": [
+          "1",
+          0
+        ]
+      },
+      "class_type": "ConditioningZeroOut"
+    },
+    "4": {
+      "inputs": {
+        "mode": "similarity",
+        "tolerance": 0,
+        "text_a": [
+          "5",
+          0
+        ],
+        "text_b": [
+          "9",
+          0
+        ]
+      },
+      "class_type": "Text Compare"
+    },
+    "5": {
+      "inputs": {
+        "Text": ""
+      },
+      "class_type": "Text box"
+    },
+    "6": {
+      "inputs": {
+        "conditioning_a": [
+          "2",
+          0
+        ],
+        "conditioning_b": [
+          "1",
+          0
+        ],
+        "boolean_number": [
+          "4",
+          2
+        ]
+      },
+      "class_type": "Conditioning Input Switch"
+    },
+    "7": {
+      "inputs": {
+        "CONDITIONING": [
+          "6",
+          0
+        ]
+      }
+    },
+    "8": {
+      "inputs": {}
+    },
+    "9": {
+      "inputs": {}
+    }
+  }
+}
